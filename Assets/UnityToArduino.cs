@@ -12,14 +12,13 @@ public class UnityToArduino : MonoBehaviour
 {
     public static string serialPortName = "/dev/cu.usbmodem2101";
     SerialPort serialPort = new SerialPort(serialPortName, 9600); 
-    // // Window use port name COMx and macOS use /dev/cu.XXX
+    // Window use port name COMx and macOS use /dev/cu.XXX
 
     // Initializing Avatars
 
     public AvatarManager avatarManager;
     public NetworkId id1 = new NetworkId();
     public NetworkId id2 = new NetworkId();
-    private int index = 0;
 
 
     void Start()
@@ -70,10 +69,8 @@ public class UnityToArduino : MonoBehaviour
                     ypos2 = ava.position.z;
                     dir2 = ava.rotation.eulerAngles.y;
                 }
-                // Access individual avatar  
-                // index++;
+
             }
-            // index = 0;
 
             // Concatenate the data into string
             string data = xpos1.ToString("F2") + "," + ypos1.ToString("F2") + "," + 
