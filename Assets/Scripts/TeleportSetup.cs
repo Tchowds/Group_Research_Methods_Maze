@@ -9,13 +9,13 @@ public class TeleportSetup : MonoBehaviour
     //player 1 rotation = 90, player 2 rotation = -90
     public int playerNum;
     private Vector3[] playerPositions;
+    //Can be used to specify the index of the spawn to override random generation, overrides player num as well
+    public int overrideSpawn;
 
     void Start()
     {
         Transform social = transform.Find("Social");
-        Debug.Log(social);
         Transform interaction = transform.Find("XR Interaction Setup");
-        Debug.Log(interaction);
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
@@ -32,9 +32,18 @@ public class TeleportSetup : MonoBehaviour
             playerNum = 1;
             Debug.Log("Incorrect player number entered, set to 1");
         }
-        
-        social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
-        interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+
+        // Index into the randomized position, first three for player 1 second three for player 2
+        // if override > 0, manually set position, for testing
+        if(overrideSpawn != 0){
+            social.position = playerPositions[overrideSpawn - 1];
+            interaction.position = playerPositions[overrideSpawn - 1];
+        } else{
+            social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+            interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+        }
+
+
         if(playerNum == 1){
             social.rotation = Quaternion.Euler(0f, 90f, 0f);
             interaction.rotation = Quaternion.Euler(0f, 90f, 0f);
