@@ -2982,6 +2982,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680501587}
     m_Modifications:
+    - target: {fileID: 1646405018166597243, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_PositionAction.m_Reference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646405018166597243, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_RotationAction.m_Reference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646405018166597243, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_IsTrackedAction.m_Reference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646405018166597243, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_TrackingStateAction.m_Reference
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3055433562365713971, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
       propertyPath: m_Name
       value: Gaze Interactor
