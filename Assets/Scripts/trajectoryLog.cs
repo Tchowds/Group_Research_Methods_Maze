@@ -23,17 +23,14 @@ public class trajectoryLog : MonoBehaviour
         TeleportSetup teleport = transform.parent.GetComponent<TeleportSetup>();
         avatarManager = transform.parent.GetComponentInChildren<AvatarManager>();
         
-        if(avatarManager != null){
-            Debug.Log(avatarManager);
-        } else{
+        if(avatarManager == null){
             Debug.Log("ERROR: avatar manager not found");
         }
-
-        if(teleport != null){
-            Debug.Log(teleport.playerNum);
-        } else{
+            
+        if(teleport == null){
             Debug.Log("ERROR: teleport script not found");
         }
+            
 
         string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         string fileName = ("player-" + teleport.playerNum) + ".txt";
@@ -43,8 +40,6 @@ public class trajectoryLog : MonoBehaviour
         WriteToFile(filePath, fileName, false);
         WriteToFile(remotePath, remoteName, false);
 
-        Debug.Log(filePath);
-
         
 
     }
@@ -53,7 +48,7 @@ public class trajectoryLog : MonoBehaviour
     void Update()
     {
         List<Avatar> list = new List<Avatar>(avatarManager.Avatars);
-        if(list.Count > 0){
+        if(list.Count > 1){
             timeElapsed += Time.deltaTime;
 
             if(timeElapsed >= writeInterval){
@@ -62,16 +57,12 @@ public class trajectoryLog : MonoBehaviour
                 foreach(Avatar avatar in avatarManager.Avatars){
                     if(avatar == avatarManager.LocalAvatar){
                         Transform posHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
-                        string toWrite = posHead.position.x + "," + posHead.position.z;
+                        string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
                         WriteToFile(filePath, toWrite);
-
-                        float rotation = posHead.rotation.eulerAngles.y;
-                        Debug.Log("rotation = " + rotation);
-
 
                     } else{
                         Transform posHead = avatar.transform.Find("Body/Floating_Head");
-                        string toWrite = posHead.position.x + "," + posHead.position.z;
+                        string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
                         WriteToFile(remotePath, toWrite);
                     }
                 }
@@ -85,7 +76,6 @@ public class trajectoryLog : MonoBehaviour
         StreamWriter writer = new StreamWriter(path, append);
         try{
             writer.WriteLine(content);
-            Debug.Log("text written to file: " + path);
         } catch (Exception e){
             Debug.Log("Error writing to file: " + e.Message);
         } finally{

@@ -25,11 +25,24 @@ public class Speaker : MonoBehaviour
                     head = avatar.transform.Find("Body/Floating_Head");
                     Debug.Log("Head position: " + head);
                     gameObject.transform.position = head.position;
+
+
+                    //Calculate number of objects in between both players
+                    //Access position of local avatar
+                    Transform localHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+                    // Find vector in which the remote player is in
+                    Vector3 direction = head.position - localHead.position;
+                    //Distance between each player
+                    float distance = direction.magnitude;
+                    //Gets a list of all the objects between both players with .Length field to use
+                    RaycastHit[] hits = Physics.RaycastAll(localHead.position, direction, distance);
+                    Debug.Log(hits.Length);
+
                 }
             }
         } else {
             Debug.Log("avatar manager not found");
         }
-        Debug.Log("Speaker position: " + gameObject.transform.position);
+        // Debug.Log("Speaker position: " + gameObject.transform.position);
     }
 }

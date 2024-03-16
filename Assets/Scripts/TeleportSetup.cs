@@ -51,8 +51,6 @@ public class TeleportSetup : MonoBehaviour
             social.rotation = Quaternion.Euler(0f, -90f, 0f);
             interaction.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        Debug.Log(interaction.position);
-
     }
 
     // Update is called once per frame
