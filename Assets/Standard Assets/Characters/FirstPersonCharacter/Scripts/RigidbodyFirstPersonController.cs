@@ -144,16 +144,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GroundCheck();
             m_IsGrounded = true;
             Vector2 input = GetInput();
-            Debug.Log("input gotten");
+            /*Debug.Log("input gotten");
 
             Debug.Log("advancedSettings.airControl = " + advancedSettings.airControl);
             Debug.Log("m_isGrounded = " + m_IsGrounded);
             Debug.Log("Mathf.Abs(input.x) > float.Epsilon = " + (Mathf.Abs(input.x) > float.Epsilon));
-            Debug.Log("Mathf.Abs(input.y) > float.Epsilon = " + (Mathf.Abs(input.y) > float.Epsilon));
+            Debug.Log("Mathf.Abs(input.y) > float.Epsilon = " + (Mathf.Abs(input.y) > float.Epsilon));*/
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
-                Debug.Log("here!");
+                //Debug.Log("here!");
                 // always move along the camera forward as it is the direction that it being aimed at
                 Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
@@ -161,11 +161,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
                 desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
-                Debug.Log("Buenos");
+                //Debug.Log("Buenos");
                 if (m_RigidBody.velocity.sqrMagnitude < (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
                 {
                     m_RigidBody.AddForce((desiredMove * SlopeMultiplier()) * fAudioForce, ForceMode.Impulse);
-                    Debug.Log("Dias");
+                   // Debug.Log("Dias");
                 }
             }
 
@@ -230,7 +230,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //y = CrossPlatformInputManager.GetAxis("Vertical")
             };
             movementSettings.UpdateDesiredTargetSpeed(input);
-            Debug.Log ("Input = " + input.x);
+            //Debug.Log ("Input = " + input.x);
 
             return input;
         }
