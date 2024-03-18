@@ -952,7 +952,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 150
+  MaxDistance: 141
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7730,20 +7730,6 @@ MonoBehaviour:
   id2:
     a: 0
     b: 0
---- !u!114 &795565475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795565464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267d8ca6dad7bba4e9f22eaf356b9eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  folderPath: Assets/Logs/
-  writeInterval: 1
 --- !u!114 &795565477 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1731467569171809127, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
@@ -10936,6 +10922,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065098757}
     m_Modifications:
+    - target: {fileID: 6598815579406187026, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_KeyboardXTranslateSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187026, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_KeyboardZTranslateSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12000,20 +11994,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   folderPath: Assets/Logs/
   writeInterval: 1
---- !u!114 &1233484905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601587779}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050bde74fe2421d4f84f7e1201b4ae17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
-  overrideSpawn: 0
 --- !u!1 &1237115222
 GameObject:
   m_ObjectHideFlags: 0
@@ -23156,6 +23136,10 @@ PrefabInstance:
       propertyPath: m_ModelPrefab
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9168142743249570444, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -23163,9 +23147,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1116481165}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1233484905}
     - targetCorrespondingSourceObject: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1233484904}
@@ -24130,9 +24111,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2642065778133092618, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 795565472}
-    - targetCorrespondingSourceObject: {fileID: 2642065778133092618, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 795565475}
   m_SourcePrefab: {fileID: 100100000, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
