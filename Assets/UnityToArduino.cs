@@ -35,7 +35,7 @@ public class UnityToArduino : MonoBehaviour
             Debug.LogError("Failed to open serial port.");
         }
         avatarManager = GetComponent<AvatarManager>();
-        InvokeRepeating("SendDataToArduino", 1f, 1f);
+        // InvokeRepeating("SendDataToArduino", 1f, 1f);
     }
 
     static float DotProduct(float[] vector1, float[] vector2)
@@ -132,7 +132,6 @@ public class UnityToArduino : MonoBehaviour
             string data = "";
 
             if (theta <= 10.0f || theta >= 350.0f){
-                Debug.Log("HiHIHIHIH");
                 float diff_x2 = -xpos2 + xpos1;
                 float diff_y2 = -ypos2 + ypos1;
                 float[] p2_p1_vect = { diff_x2, diff_y2 };
@@ -150,7 +149,6 @@ public class UnityToArduino : MonoBehaviour
                 }
 
                 if (theta2 >= 350.0f || theta2 <= 10.0f){
-                    Debug.Log("YOYOYO");
                     float ratio = (float)Math.Sqrt(20000) / magB;
                     int delayVal = ((int) (1800 * ratio)) + 200 ;
                     data = delayVal.ToString();
@@ -205,19 +203,19 @@ public class UnityToArduino : MonoBehaviour
 
             }
             // Send the combined data to Arduino
-            serialPort.WriteLine(data);
             Debug.Log("Data sent to Arduino: " + data);
+            serialPort.WriteLine(data);
 
             timer += Time.deltaTime;
             if (timer >= logInterval)
             {
                 Debug.Log("Dir: "+ rd1 +"Data Logged: " + data);
                 timer = 0f;
-                data = DateTime.Now + " " + rd1 + " " + data ;
+                string datalog = DateTime.Now + " " + rd1 + " " + data ;
                 string filePath = "userid_" + userid + "_data.txt";
                 using (StreamWriter writer = File.AppendText(filePath))
                 {
-                    writer.WriteLine(data);
+                    writer.WriteLine(datalog);
                 }
             }
         }
