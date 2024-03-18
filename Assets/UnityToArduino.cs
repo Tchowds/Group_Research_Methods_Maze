@@ -12,8 +12,8 @@ using System;
 
 public class UnityToArduino : MonoBehaviour
 {
-    public static string serialPortName = "/dev/cu.usbmodem2101";
-    SerialPort serialPort = new SerialPort(serialPortName, 9600); 
+    public static string serialPortName = "COM2";
+    SerialPort serialPort = new SerialPort(serialPortName, 9600);
     // Window use port name COMx and macOS use /dev/cu.XXX
 
     // Initializing Avatars
@@ -24,14 +24,15 @@ public class UnityToArduino : MonoBehaviour
 
     // Time interval to log data
     private float timer = 0f;
-    private float logInterval = .5f; 
-    private string userid =  Guid.NewGuid().ToString();
+    private float logInterval = .5f;
+    private string userid = Guid.NewGuid().ToString();
 
 
     void Start()
     {
         serialPort.Open();
-        if (!serialPort.IsOpen){
+        if (!serialPort.IsOpen)
+        {
             Debug.LogError("Failed to open serial port.");
         }
         avatarManager = GetComponent<AvatarManager>();
@@ -47,7 +48,7 @@ public class UnityToArduino : MonoBehaviour
         }
         return result;
     }
-    
+
 
     // Update is called once per frame
     void Update()
@@ -60,27 +61,34 @@ public class UnityToArduino : MonoBehaviour
         float ypos2 = 0;
         float rd2 = 0;
 
-        if (!serialPort.IsOpen){
+        if (!serialPort.IsOpen)
+        {
             serialPort.Open();
         }
 
-        if (avatarManager != null){            
-            foreach (Avatar avatar in avatarManager.Avatars){
-                if (avatar.NetworkId != null && avatar.NetworkId != id2 && id1 == new NetworkId()){
+        if (avatarManager != null)
+        {
+            foreach (Avatar avatar in avatarManager.Avatars)
+            {
+                if (avatar.NetworkId != null && avatar.NetworkId != id2 && id1 == new NetworkId())
+                {
                     id1 = avatar.NetworkId;
                 }
-                else if (avatar.NetworkId != null && avatar.NetworkId != id1 && id2 == new NetworkId()){
+                else if (avatar.NetworkId != null && avatar.NetworkId != id1 && id2 == new NetworkId())
+                {
                     id2 = avatar.NetworkId;
                 }
 
                 Transform ava = avatar.transform.Find("Body/Floating_Head");
-                if (avatar.NetworkId == id1) {
+                if (avatar.NetworkId == id1)
+                {
                     xpos1 = ava.position.x;
                     ypos1 = ava.position.z;
                     rd1 = ava.rotation.eulerAngles.y;
-                    
+
                 }
-                else if (avatar.NetworkId == id2) {
+                else if (avatar.NetworkId == id2)
+                {
                     xpos2 = ava.position.x;
                     ypos2 = ava.position.z;
                     rd2 = ava.rotation.eulerAngles.y;
@@ -89,21 +97,21 @@ public class UnityToArduino : MonoBehaviour
             }
 
             // // Concatenate the data into string
-            // string data = xpos1.ToString("F2") + "," + ypos1.ToString("F2") + "," + 
-            //                 xpos2.ToString("F2") + "," + ypos2.ToString("F2") + "," + 
-            //                 dir1.ToString("F2") + "," + dir2.ToString("F2");
+            string data = xpos1.ToString("F2") + "," + ypos1.ToString("F2") + "," + 
+                            xpos2.ToString("F2") + "," + ypos2.ToString("F2") + "," + 
+                            rd1.ToString("F2") + "," + rd2.ToString("F2");
 
-            
+
             float rdir1 = ((rd1 + 270.0f) % 360.0f) * (float)(Math.PI / 180.0);
             float rdir2 = ((rd2 + 270.0f) % 360.0f) * (float)(Math.PI / 180.0);
 
             float diff_x = -xpos1 + xpos2;
             float diff_y = -ypos1 + ypos2;
 
-            float[] p1_facing_dir = {(float)Math.Cos(rdir1), (float)Math.Sin(rdir1 - Math.PI)};
+            float[] p1_facing_dir = { (float)Math.Cos(rdir1), (float)Math.Sin(rdir1 - Math.PI) };
             float[] p2_facing_dir = { (float)Math.Cos(rdir2), (float)Math.Sin(rdir2 - Math.PI) };
-            
-            float[] p1_p2_vect = {diff_x, diff_y};
+
+            float[] p1_p2_vect = { diff_x, diff_y };
 
             float dot = DotProduct(p1_facing_dir, p1_p2_vect);
 
@@ -113,7 +121,7 @@ public class UnityToArduino : MonoBehaviour
             float dot_denom = magA * magB;
 
             float theta = (float)(Math.Acos(dot / dot_denom) * (180.0 / Math.PI));
-            
+
             // if ((ypos1 < ypos2 && theta > rd1) || (ypos1 > ypos2 && theta < rd1) || 
             //     (xpos1 < xpos2 && theta < rd1) || (xpos1 > xpos2 && theta > rd1))
             // {
@@ -125,13 +133,15 @@ public class UnityToArduino : MonoBehaviour
             // float dotperp = p1_p2_vect[1] * p1_facing_dir[0] - p1_p2_vect[0] * p1_facing_dir[1];
 
 
-            if((dot > 0 && dotperp < 0) || (dot < 0 && dotperp <0)){
+            if ((dot > 0 && dotperp < 0) || (dot < 0 && dotperp < 0))
+            {
                 theta = 360.0f - theta;
             }
-            
-            string data = "";
 
-            if (theta <= 10.0f || theta >= 350.0f){
+            string dataToFile = "";
+
+            if (theta <= 10.0f || theta >= 350.0f)
+            {
                 float diff_x2 = -xpos2 + xpos1;
                 float diff_y2 = -ypos2 + ypos1;
                 float[] p2_p1_vect = { diff_x2, diff_y2 };
@@ -144,62 +154,74 @@ public class UnityToArduino : MonoBehaviour
 
                 // float dotperp2 = p1_p2_vect[1] * p2_facing_dir[0] - p1_p2_vect[0] * p2_facing_dir[1];
                 float dotperp2 = p1_p2_vect[0] * p2_facing_dir[1] - p1_p2_vect[1] * p2_facing_dir[0];
-                if((dot2 > 0 && dotperp2 < 0) || (dot2 < 0 && dotperp2 <0)){
+                if ((dot2 > 0 && dotperp2 < 0) || (dot2 < 0 && dotperp2 < 0))
+                {
                     theta2 = 360.0f - theta2;
                 }
 
-                if (theta2 >= 350.0f || theta2 <= 10.0f){
-                    float ratio = (float)Math.Sqrt(20000) / magB;
-                    int delayVal = ((int) (1800 * ratio)) + 200 ;
-                    data = delayVal.ToString();
-                    // data = "N";
+                if (theta2 >= 350.0f || theta2 <= 10.0f)
+                {
+                    float ratio = magB / (float)Math.Sqrt(20000);
+                    int delayVal = ((int)(1800 * ratio)) + 200;
+                    dataToFile = delayVal.ToString();
+                    // dataToFile = "N";
                 }
-                else {
-                    data = "N";
+                else
+                {
+                    dataToFile = "N";
                 }
             }
 
-            else{
-                if (theta <= 22.5 || theta > 337.5){
+            else
+            {
+                if (theta <= 22.5 || theta > 337.5)
+                {
                     // Angle is within the range of the north direction
-                    data = "N";
+                    dataToFile = "N";
                 }
 
-                else if (22.5 < theta && theta <= 67.5){
+                else if (22.5 < theta && theta <= 67.5)
+                {
                     // Angle is within *range* degrees to the northeast direction
-                    data = "NE";
+                    dataToFile = "NE";
                 }
 
-                else if (67.5 < theta && theta <= 112.5){
+                else if (67.5 < theta && theta <= 112.5)
+                {
                     // Angle is within *range* degrees to the east direction
-                    data = "E";
+                    dataToFile = "E";
                 }
 
-                else if (112.5 < theta && theta <= 157.5){
+                else if (112.5 < theta && theta <= 157.5)
+                {
                     // Angle is within *range* degrees to the southeast direction
-                    data = "SE";
+                    dataToFile = "SE";
                 }
 
-                else if (157.5 < theta && theta <= 202.5){
+                else if (157.5 < theta && theta <= 202.5)
+                {
                     // Angle is within *range* degrees to the south direction
-                    data = "S";
+                    dataToFile = "S";
                 }
 
-                else if (202.5 < theta && theta <= 247.5){
+                else if (202.5 < theta && theta <= 247.5)
+                {
                     // Angle is within *range* degrees to the southwest direction
-                    data = "SW";
+                    dataToFile = "SW";
                 }
 
-                else if (247.5 < theta && theta <= 292.5){
+                else if (247.5 < theta && theta <= 292.5)
+                {
                     // Angle is within *range* degrees to the west direction
-                    data = "W";
+                    dataToFile = "W";
                 }
 
-                else if (292.5 < theta && theta <= 337.5){
+                else if (292.5 < theta && theta <= 337.5)
+                {
                     // Angle is within *range* degrees to the northwest direction
-                    data = "NW";
+                    dataToFile = "NW";
                 }
-            
+
 
             }
             // Send the combined data to Arduino
@@ -209,9 +231,9 @@ public class UnityToArduino : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= logInterval)
             {
-                Debug.Log("Dir: "+ rd1 +"Data Logged: " + data);
+                Debug.Log("Dir: " + rd1 + "Data Logged: " + dataToFile);
                 timer = 0f;
-                string datalog = DateTime.Now + " " + rd1 + " " + data ;
+                string datalog = DateTime.Now + " " + rd1 + " " + dataToFile;
                 string filePath = "userid_" + userid + "_data.txt";
                 using (StreamWriter writer = File.AppendText(filePath))
                 {
@@ -219,7 +241,8 @@ public class UnityToArduino : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             Debug.LogError("AvatarManager component not found on the GameObject.");
         }
     }
