@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using Ubiq.Avatars;
 using Avatar = Ubiq.Avatars.Avatar;
+using UnityEngine.SceneManagement;
 
 public class trajectoryLog : MonoBehaviour
 {
@@ -30,11 +31,19 @@ public class trajectoryLog : MonoBehaviour
         if(teleport == null){
             Debug.Log("ERROR: teleport script not found");
         }
-            
 
-        string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        string fileName = ("player-" + teleport.playerNum) + ".txt";
-        string remoteName = ("remote-" + teleport.playerNum) + ".txt";
+        int localNum = teleport.playerNum;
+        int remoteNum;
+        if(localNum == 1){
+            remoteNum = 2;
+        } else{
+            remoteNum = 1;
+        }
+
+        string dateTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss_");
+        string mode = SceneManager.GetActiveScene().name;
+        string fileName = dateTime + ("player-" + localNum) + mode + ".txt";
+        string remoteName = dateTime + ("remote-" + remoteNum) + mode +".txt";
         filePath = Path.Combine(folderPath, fileName);
         remotePath = Path.Combine(folderPath, remoteName);
         WriteToFile(filePath, fileName, false);
@@ -48,23 +57,27 @@ public class trajectoryLog : MonoBehaviour
     void Update()
     {
         List<Avatar> list = new List<Avatar>(avatarManager.Avatars);
-        if(list.Count > 1){
+        if(list.Count >= 1){
             timeElapsed += Time.deltaTime;
 
             if(timeElapsed >= writeInterval){
                 timeElapsed = 0f;
 
                 foreach(Avatar avatar in avatarManager.Avatars){
+                    Transform localHead = avatarManager.LocalAvatar.transform;
                     if(avatar == avatarManager.LocalAvatar){
-                        //Transform posHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
-                        Transform posHead = avatarManager.LocalAvatar.transform;
-                        string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
+                        string toWrite = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "," + localHead.position.x + "," + localHead.position.z + "," + localHead.rotation.eulerAngles.y;
                         WriteToFile(filePath, toWrite);
 
                     } else{
                         //Transform posHead = avatar.transform.Find("Body/Floating_Head");
-                        Transform posHead = avatar.transform;
-                        string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
+                        Transform remoteHead = avatar.transform;
+
+                        Vector3 direction = remoteHead.position - localHead.position;
+                        float distance = direction.magnitude;
+                        RaycastHit[] hits = Physics.RaycastAll(localHead.position, direction, distance);
+
+                        string toWrite = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "," + remoteHead.position.x + "," + remoteHead.position.z + "," + remoteHead.rotation.eulerAngles.y + "," + hits.Length;
                         WriteToFile(remotePath, toWrite);
                     }
                 }
