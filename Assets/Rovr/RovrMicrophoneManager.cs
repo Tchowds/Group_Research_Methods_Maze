@@ -84,7 +84,7 @@ public class RovrMicrophoneManager : MonoBehaviour
     /// </summary>
     private void StartMicListener()
     {
-        Debug.Log("STARTED");
+        //Debug.Log("STARTED");
         if(RovrAudioSource.isPlaying)
         {
             RovrAudioSource.Stop();
@@ -92,14 +92,11 @@ public class RovrMicrophoneManager : MonoBehaviour
 
         if (Microphone.devices.Length > 0) // check if we have any microphone devices available
         {
-            Debug.Log("here >>>>>>>>>>>>>>>>>>>");
-            //if(true) //if(deviceName == "")
-            //{
-               
+            if(deviceName == "")
+            { 
                 deviceName = Microphone.devices[0];
-                Debug.Log("Hereeeeee " + deviceName + " thereeeeee");
-            //}
-            Debug.Log("there >>>>>>>>>>>>>>>>>>>");
+            }
+
             RovrAudioSource.clip = Microphone.Start(deviceName, true, 1, 2000);
             RovrAudioSource.loop = true;
 
@@ -115,7 +112,7 @@ public class RovrMicrophoneManager : MonoBehaviour
 
             RovrAudioSource.Play();
 
-            Debug.Log("Started Microphone " + deviceName);
+            Debug.Log("RigidBodyFPSController connected to device: " + deviceName);
 
             openedDevice = deviceName;
         }

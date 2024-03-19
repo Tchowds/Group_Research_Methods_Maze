@@ -54,7 +54,8 @@ public class UnityToArduino : MonoBehaviour
                     id2 = avatar.NetworkId;
                 }
 
-                Transform ava = avatar.transform.Find("Body/Floating_Head");
+                //Transform ava = avatar.transform.Find("Body/Floating_Head");
+                Transform ava = avatar.transform;
                 if (avatar.NetworkId == id1) {
                     xpos1 = ava.position.x;
                     ypos1 = ava.position.z;

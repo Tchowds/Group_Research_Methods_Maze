@@ -16,6 +16,7 @@ public class TeleportSetup : MonoBehaviour
     {
         Transform social = transform.Find("Social");
         Transform interaction = transform.Find("XR Interaction Setup");
+        Debug.Log("Found XR Setup: " + interaction + " ?");
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
