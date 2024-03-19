@@ -56,12 +56,14 @@ public class trajectoryLog : MonoBehaviour
 
                 foreach(Avatar avatar in avatarManager.Avatars){
                     if(avatar == avatarManager.LocalAvatar){
-                        Transform posHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+                        //Transform posHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+                        Transform posHead = avatarManager.LocalAvatar.transform;
                         string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
                         WriteToFile(filePath, toWrite);
 
                     } else{
-                        Transform posHead = avatar.transform.Find("Body/Floating_Head");
+                        //Transform posHead = avatar.transform.Find("Body/Floating_Head");
+                        Transform posHead = avatar.transform;
                         string toWrite = posHead.position.x + "," + posHead.position.z + "," + posHead.rotation.eulerAngles.y;
                         WriteToFile(remotePath, toWrite);
                     }

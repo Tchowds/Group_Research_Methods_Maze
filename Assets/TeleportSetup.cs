@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ubiq.Avatars;
+using Avatar = Ubiq.Avatars.Avatar;
 
 public class TeleportSetup : MonoBehaviour
 {
     
+    public AvatarManager avatarManager;
     // Start is called before the first frame update
     //player 1 rotation = 90, player 2 rotation = -90
     public int playerNum;
@@ -12,14 +15,18 @@ public class TeleportSetup : MonoBehaviour
     //Can be used to specify the index of the spawn to override random generation, overrides player num as well
     public int overrideSpawn;
 
+
+
     void Start()
     {
         Transform social = transform.Find("Social");
-        Transform interaction = transform.Find("XR Interaction Setup");
+        // Transform interaction = transform.Find("XR Interaction Setup");
+        Transform avatarpos = avatarManager.LocalAvatar.transform;
+        // Debug.Log("Found XR Setup: " + interaction + " ?");
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
-            new Vector3(-45f, 0f, 47.5f), //left side of map (x)
+            new Vector3(-45f, 1f, 47.5f), //left side of map (x)
             new Vector3(-45f, 0f, -2.5f),
             new Vector3(-45f, 0f, -47.5f), 
             new Vector3(45f, 0f, 47.5f), //right side of map 
@@ -37,19 +44,19 @@ public class TeleportSetup : MonoBehaviour
         // if override > 0, manually set position, for testing
         if(overrideSpawn != 0){
             social.position = playerPositions[overrideSpawn - 1];
-            interaction.position = playerPositions[overrideSpawn - 1];
+            avatarpos.position = playerPositions[overrideSpawn - 1];
         } else{
             social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
-            interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+            avatarpos.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
         }
 
 
         if(playerNum == 1){
             social.rotation = Quaternion.Euler(0f, 90f, 0f);
-            interaction.rotation = Quaternion.Euler(0f, 90f, 0f);
+            avatarpos.rotation = Quaternion.Euler(0f, 90f, 0f);
         } else{
             social.rotation = Quaternion.Euler(0f, -90f, 0f);
-            interaction.rotation = Quaternion.Euler(0f, -90f, 0f);
+            avatarpos.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
     }
 

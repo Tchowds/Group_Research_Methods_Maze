@@ -12,9 +12,9 @@ public class Speaker : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        // avatarManager = transform.parent.GetComponent<AvatarManager>();
-        avatarManager = gameObject.GetComponent<AvatarManager>();
+    { 
+        //avatarManager = transform.parent.GetComponent<AvatarManager>();
+        avatarManager = gameObject.GetComponentInParent<AvatarManager>();
     }
 
     // Update is called once per frame
@@ -40,14 +40,16 @@ public class Speaker : MonoBehaviour
 
             foreach (Avatar avatar in avatarManager.Avatars) {
                 if (avatar != avatarManager.LocalAvatar) {
-                    Transform head = avatar.transform.Find("Body/Floating_Head");
+                    //Transform head = avatar.transform.Find("Body/Floating_Head");
+                    Transform head = avatar.transform;
                     Debug.Log("Head position: " + head);
                     gameObject.transform.position = head.position;
 
 
                     //Calculate number of objects in between both players
                     //Access position of local avatar
-                    Transform localHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+                    //Transform localHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+                    Transform localHead = avatarManager.LocalAvatar.transform;
                     // Find vector in which the remote player is in
                     Vector3 direction = head.position - localHead.position;
                     //Distance between each player
