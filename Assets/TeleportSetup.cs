@@ -26,12 +26,12 @@ public class TeleportSetup : MonoBehaviour
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
-            new Vector3(-45f, 1f, 47.5f), //left side of map (x)
-            new Vector3(-45f, 0f, -2.5f),
-            new Vector3(-45f, 0f, -47.5f), 
-            new Vector3(45f, 0f, 47.5f), //right side of map 
-            new Vector3(45f, 0f, -2.5f),
-            new Vector3(45f, 0f, -47.5f),
+            new Vector3(-46f, 1f, 47.5f), //left side of map (x)
+            new Vector3(-46f, 1f, -2.5f),
+            new Vector3(-46f, 1f, -47.5f), 
+            new Vector3(46f, 1f, 47.5f), //right side of map 
+            new Vector3(46f, 1f, -2.5f),
+            new Vector3(46f, 1f, -47.5f),
         };
         
         int spawnPos = Random.Range(0,3);
