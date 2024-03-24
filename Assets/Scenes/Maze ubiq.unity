@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17593586, g: 0.22016944, b: 0.3024974, a: 1}
+  m_IndirectSpecularColor: {r: 0.17593595, g: 0.22016978, b: 0.30249792, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2567,7 +2567,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4300460389581771099, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
   m_PrefabInstance: {fileID: 2642065777373534794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &217390600
+--- !u!114 &217390603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2576,7 +2576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 217390597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0458a9fbe1f9ebe4b994999f6241b995, type: 3}
+  m_Script: {fileID: 11500000, guid: 267d8ca6dad7bba4e9f22eaf356b9eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   folderPath: Assets/Logs/
@@ -7286,19 +7286,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2642065778884258268, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
   m_PrefabInstance: {fileID: 2642065777373534794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &751696654
+--- !u!114 &751696655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751696648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ecb310a3a04b984892118e7576b0bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNum: 1
+  playerNum: 2
   overrideSpawn: 0
 --- !u!1 &759465694
 GameObject:
@@ -10982,11 +10982,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6598815579406187026, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_KeyboardXTranslateSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187026, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_KeyboardZTranslateSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23131,7 +23131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9168142743249570444, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_MoveSpeed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24093,7 +24093,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2642065778884258265, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 751696654}
+      addedObject: {fileID: 751696655}
     - targetCorrespondingSourceObject: {fileID: 2642065778133092618, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 795565467}
@@ -24105,7 +24105,7 @@ PrefabInstance:
       addedObject: {fileID: 795565469}
     - targetCorrespondingSourceObject: {fileID: 4300460389581771099, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 217390600}
+      addedObject: {fileID: 217390603}
   m_SourcePrefab: {fileID: 100100000, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
