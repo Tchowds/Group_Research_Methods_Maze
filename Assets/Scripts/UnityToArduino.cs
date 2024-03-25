@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 using System.IO.Ports;
 using Ubiq.Avatars;
 using Avatar = Ubiq.Avatars.Avatar;
@@ -10,7 +11,7 @@ using Ubiq.Messaging;
 
 public class UnityToArduino : MonoBehaviour
 {
-    public static string serialPortName = "/dev/cu.usbmodem2101";
+    public static string serialPortName = "COM2";
     SerialPort serialPort = new SerialPort(serialPortName, 9600); 
     // Window use port name COMx and macOS use /dev/cu.XXX
 
@@ -56,6 +57,7 @@ public class UnityToArduino : MonoBehaviour
                 }
 
                 Transform ava = avatar.transform.Find("Body/Floating_Head");
+                Quaternion headsetRot = InputTracking.GetLocalRotation(XRNode.Head);
                 Debug.Log("ID1: " + id1);
                 Debug.Log("ID2: " + id2);
                 if (avatar.NetworkId == id1) {
@@ -69,6 +71,7 @@ public class UnityToArduino : MonoBehaviour
                     ypos2 = ava.position.z;
                     dir2 = ava.rotation.eulerAngles.y;
                 }
+                Debug.Log(headsetRot.eulerAngles.y + "," + dir1);
 
             }
 

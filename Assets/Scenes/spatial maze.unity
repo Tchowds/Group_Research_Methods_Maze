@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17593624, g: 0.22017018, b: 0.3024987, a: 1}
+  m_IndirectSpecularColor: {r: 0.17593582, g: 0.22016938, b: 0.30249745, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2579,8 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0458a9fbe1f9ebe4b994999f6241b995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  folderPath: Assets/Logs/
-  writeInterval: 1
 --- !u!1 &233129784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6442,7 +6440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4656836489152793877, guid: 6e80f6bc027d10b459906104be9d216d, type: 3}
       propertyPath: m_TrackingType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7070160519211899496, guid: 6e80f6bc027d10b459906104be9d216d, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -6485,6 +6483,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e80f6bc027d10b459906104be9d216d, type: 3}
+--- !u!4 &633840538 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9199687662794394803, guid: 6e80f6bc027d10b459906104be9d216d, type: 3}
+  m_PrefabInstance: {fileID: 633840537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637024468
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,6 +7449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNum: 1
   overrideSpawn: 0
+  player: {fileID: 633840538}
 --- !u!1 &759465694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8054,7 +8058,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 795565464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0458a9fbe1f9ebe4b994999f6241b995, type: 3}
+  m_Script: {fileID: 11500000, guid: 267d8ca6dad7bba4e9f22eaf356b9eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   folderPath: Assets/Logs/
