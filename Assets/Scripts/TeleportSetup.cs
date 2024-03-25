@@ -11,11 +11,12 @@ public class TeleportSetup : MonoBehaviour
     private Vector3[] playerPositions;
     //Can be used to specify the index of the spawn to override random generation, overrides player num as well
     public int overrideSpawn;
+    public Transform player;
 
     void Start()
     {
-        Transform social = transform.Find("Social");
-        Transform interaction = transform.Find("XR Interaction Setup");
+        // Transform social = transform.Find("Social");
+        // Transform interaction = transform.Find("XR Interaction Setup");
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
@@ -36,20 +37,25 @@ public class TeleportSetup : MonoBehaviour
         // Index into the randomized position, first three for player 1 second three for player 2
         // if override > 0, manually set position, for testing
         if(overrideSpawn != 0){
-            social.position = playerPositions[overrideSpawn - 1];
-            interaction.position = playerPositions[overrideSpawn - 1];
+            // social.position = playerPositions[overrideSpawn - 1];
+            // interaction.position = playerPositions[overrideSpawn - 1];
+            player.position = playerPositions[overrideSpawn - 1];
         } else{
-            social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
-            interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+            // social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+            // interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+            player.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
+
         }
 
 
         if(playerNum == 1){
-            social.rotation = Quaternion.Euler(0f, 90f, 0f);
-            interaction.rotation = Quaternion.Euler(0f, 90f, 0f);
+            // social.rotation = Quaternion.Euler(0f, 90f, 0f);
+            // interaction.rotation = Quaternion.Euler(0f, 90f, 0f);
+            player.rotation = Quaternion.Euler(0f, 90f, 0f);
         } else{
-            social.rotation = Quaternion.Euler(0f, -90f, 0f);
-            interaction.rotation = Quaternion.Euler(0f, -90f, 0f);
+            // social.rotation = Quaternion.Euler(0f, -90f, 0f);
+            // interaction.rotation = Quaternion.Euler(0f, -90f, 0f);
+            player.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
     }
 
