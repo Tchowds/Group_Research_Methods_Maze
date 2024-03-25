@@ -20,12 +20,12 @@ public class TeleportSetup : MonoBehaviour
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
-            new Vector3(-45f, 0f, 47.5f), //left side of map (x)
-            new Vector3(-45f, 0f, -2.5f),
-            new Vector3(-45f, 0f, -47.5f), 
-            new Vector3(45f, 0f, 47.5f), //right side of map 
-            new Vector3(45f, 0f, -2.5f),
-            new Vector3(45f, 0f, -47.5f),
+            new Vector3(-48f, 0f, 50f), //left side of map (x)
+            new Vector3(-48f, 0f, 0f),
+            new Vector3(-48f, 0f, -45f), 
+            new Vector3(46f, 0f, 49.5f), //right side of map 
+            new Vector3(46f, 0f, 0f),
+            new Vector3(46f, 0f, -47.5f),
         };
         
         int spawnPos = Random.Range(0,3);
@@ -44,8 +44,8 @@ public class TeleportSetup : MonoBehaviour
             // social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
             // interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
             player.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
-
         }
+        Debug.Log(player.position);
 
 
         if(playerNum == 1){
