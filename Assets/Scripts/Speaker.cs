@@ -57,7 +57,7 @@ public class Speaker : MonoBehaviour
                     //Gets a list of all the objects between both players with .Length field to use
                     RaycastHit[] hits = Physics.RaycastAll(localHead.position, direction, distance);
                     Debug.Log(hits.Length);
-                    audioSource.volume = 1f - (0.15f * hits.Length);
+                    audioSource.volume = 1f - (0.05f * hits.Length);
                 }
             }
         } else {

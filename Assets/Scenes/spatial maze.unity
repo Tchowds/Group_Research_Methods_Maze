@@ -7447,7 +7447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecb310a3a04b984892118e7576b0bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNum: 1
+  playerNum: 2
   overrideSpawn: 0
   player: {fileID: 633840538}
 --- !u!1 &759465694
@@ -8062,7 +8062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   folderPath: Assets/Logs/
-  writeInterval: 1
+  writeInterval: 0.5
 --- !u!1 &796054786
 GameObject:
   m_ObjectHideFlags: 0
@@ -8518,6 +8518,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
       propertyPath: m_Name
       value: _livingBirdsController
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13216,7 +13220,7 @@ GameObject:
   - component: {fileID: 1293507447}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: lb_groundTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

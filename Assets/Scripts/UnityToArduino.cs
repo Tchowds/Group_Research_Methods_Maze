@@ -57,7 +57,7 @@ public class UnityToArduino : MonoBehaviour
                     id2 = avatar.NetworkId;
                 }
 
-                Transform ava = avatar.transform.Find("Body/Floating_Torso");
+                Transform ava = avatar.transform.Find("Body/Floating_Torso_A");
                 Quaternion headsetRot = InputTracking.GetLocalRotation(XRNode.Head);
                 Debug.Log("ID1: " + id1);
                 Debug.Log("ID2: " + id2);

@@ -162,7 +162,7 @@ def plot_distance_over_time(file_path1, file_path2):
 
 
 # Example usage
-file_path = '2024-03-25_13-33-31_player-1spatial maze.txt'  # Replace with the path to your text file
-remote_path = '2024-03-25_13-33-31_remote-2spatial maze.txt'
+file_path = '2024-03-26_14-48-57_player-2spatial maze.txt'  # Replace with the path to your text file
+remote_path = '2024-03-26_14-48-57_remote-1spatial maze.txt'
 plot_coordinates_with_arrows_and_lines([file_path, remote_path])
 plot_speed([file_path])

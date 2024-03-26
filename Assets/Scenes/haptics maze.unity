@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17593624, g: 0.22017018, b: 0.3024987, a: 1}
+  m_IndirectSpecularColor: {r: 0.17593582, g: 0.22016938, b: 0.30249745, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7445,13 +7445,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751696648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ecb310a3a04b984892118e7576b0bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNum: 1
-  overrideSpawn: 6
+  playerNum: 2
+  overrideSpawn: 0
   player: {fileID: 1496285834}
 --- !u!1 &759465694
 GameObject:
@@ -8052,7 +8052,6 @@ MonoBehaviour:
   id2:
     a: 0
     b: 0
-  ava: {fileID: 1085462019}
 --- !u!114 &795565475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8620,6 +8619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _livingBirdsController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8658,6 +8661,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1ca5316dd08051f42b31052d31beefed, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -62,7 +62,7 @@ public class trajectoryLog : MonoBehaviour
     void Update()
     {
         List<Avatar> list = new List<Avatar>(avatarManager.Avatars);
-        Transform localHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Head");
+        Transform localHead = avatarManager.LocalAvatar.transform.Find("Body/Floating_Torso_A");
         if(list.Count == 2)
         {
             timeElapsed += Time.deltaTime;
@@ -72,7 +72,7 @@ public class trajectoryLog : MonoBehaviour
                 Transform remoteHead = null;
                 foreach(Avatar avatar in avatarManager.Avatars){
                     if(avatar != avatarManager.LocalAvatar){
-                        remoteHead = avatar.transform.Find("Body/Floating_Head");
+                        remoteHead = avatar.transform.Find("Body/Floating_Torso_A");
                         break;
                     }
                 }
