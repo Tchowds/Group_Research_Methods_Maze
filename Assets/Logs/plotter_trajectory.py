@@ -48,7 +48,7 @@ def plot_coordinates_with_arrows_and_lines(file_paths):
             dx = np.sin(angle_rad)  # Switch sin and cos for clockwise rotation
             dy = np.cos(angle_rad)
             # Plot arrow starting from the point
-            plt.arrow(x_coords[j], y_coords[j], dx, dy, head_width=0.5, head_length=0.7, fc="red", ec="red")
+            # plt.arrow(x_coords[j], y_coords[j], dx, dy, head_width=0.5, head_length=0.7, fc="red", ec="red")
             # Plot line connecting current point to the next point
             plt.plot([x_coords[j], x_coords[j+1]], [y_coords[j], y_coords[j+1]], color=colors[i][j])
 
@@ -162,7 +162,7 @@ def plot_distance_over_time(file_path1, file_path2):
 
 
 # Example usage
-file_path = '2024-03-26_14-48-57_player-2spatial maze.txt'  # Replace with the path to your text file
-remote_path = '2024-03-26_14-48-57_remote-1spatial maze.txt'
+file_path = '2024-03-27_14-49-24_player-2haptics maze.txt'  # Replace with the path to your text file
+remote_path = '2024-03-27_14-49-24_remote-1haptics maze.txt'
 plot_coordinates_with_arrows_and_lines([file_path, remote_path])
-plot_speed([file_path])
+# plot_speed([file_path])
