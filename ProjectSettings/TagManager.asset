@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Teleport
   - lb_groundTarget
-  - lb_perchTarget
   layers:
   - Default
   - TransparentFX

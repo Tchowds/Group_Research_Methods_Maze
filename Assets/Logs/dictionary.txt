@@ -1,0 +1,55 @@
+2024-03-26_11-38-09_player-2spatial maze.txt,id=23,id=7,04:20:29
+2024-03-26_11-38-09_remote-1spatial maze.txt,id=23,id=7,04:20:29
+2024-03-26_12-01-19_player-1haptics maze.txt,id1=7,id2=23,03:17:56
+2024-03-26_12-01-19_remote-2haptics maze.txt,id1=7,id2=23,03:17:56
+2024-03-26_12-35-13_player-1haptics maze.txt,id1=25,id2=24,04:28:41
+2024-03-26_12-35-13_remote-2haptics maze.txt,id1=25,id2=24,04:28:41
+2024-03-26_12-44-58_player-2spatial maze.txt,id1=25,id2=24,01:56:09
+2024-03-26_12-44-58_remote-1spatial maze.txt,id1=25,id2=24,01:56:09
+2024-03-26_13-32-55_player-2haptics maze.txt,id1=6,id2=5,10:00:00,FAILURE
+2024-03-26_13-32-55_remote-1haptics maze.txt,id1=6,id2=5,10:00:00,FAILURE
+2024-03-26_13-56-26_player-2spatial maze.txt,id1=5,id2=6,02:43:98
+2024-03-26_13-56-26_remote-1spatial maze.txt,id1=5,id2=6,02:43:98
+2024-03-26_14-17-48_player-2haptics maze.txt,id1=6,id2=5,03:32:74
+2024-03-26_14-17-48_remote-1haptics maze.txt,id1=6,id2=5,03:32:74
+2024-03-26_14-42-15_player-2haptics maze.txt,id1=27,id2=26,01:31:46
+2024-03-26_14-42-15_remote-1haptics maze.txt,id1=27,id2=26,01:31:46
+2024-03-26_14-48-57_player-2spatial maze.txt,id1=26,id2=27,04:50:38
+2024-03-26_14-48-57_remote-1spatial maze.txt,id1=26,id2=27,4:50:38
+2024-03-27_10-28-13_player-2haptics maze.txt,id1=20,id2=16,05:26:15
+2024-03-27_10-28-13_remote-1haptics maze.txt,id1=20,id2=16,05:26:15
+2024-03-27_10-39-01_player-2spatial maze.txt,id1=16,id2=20,01:52:34
+2024-03-27_10-39-01_remote-1spatial maze.txt,id1=16,id2=20,01:52:34
+2024-03-27_11-30-57_player-2spatial maze.txt,id1=12,id2=21,3:46:28,WRONG MODE FAILURE
+2024-03-27_11-30-57_remote-1spatial maze.txt,id1=12,id2=21,3:46:28,WRONG MODE FAILURE
+2024-03-27_11-49-54_player-2spatial maze.txt,id1=12,id2=21,02:45:50
+2024-03-27_11-49-54_remote-1spatial maze.txt,id1=12,id2=21,02:45:50
+2024-03-27_12-01-31_player-2haptics maze.txt,id1=12,id2=21,00:57:61
+2024-03-27_12-01-31_remote-1haptics maze.txt,id1=12,id2=21,00:57:61
+2024-03-27_12-22-22_player-2spatial maze.txt,id1=2,id2=3,01:10:83,FAILURE *
+2024-03-27_12-22-22_remote-1spatial maze.txt,id1=2,id2=3,01:10:83,FAILURE *
+2024-03-27_12-34-31_player-2haptics maze.txt,id1=2,id2=3,03:14:02,FAILURE *
+2024-03-27_12-34-31_remote-1haptics maze.txt,id1=2,id2=3,3:14:02,FAILURE *
+2024-03-27_12-37-56_player-2haptics maze.txt,id1=2,id2=3,03:14:02,FAILURE *
+2024-03-27_12-37-56_remote-1haptics maze.txt,id1=2,id2=3,03:14:02,FAILURE *
+2024-03-27_13-05-54_player-2haptics maze.txt,id1=29,id2=28,01:28:50
+2024-03-27_13-05-54_remote-1haptics maze.txt,id1=29,id2=28,01:28:50
+2024-03-27_13-19-15_player-2spatial maze.txt,id1=29,id2=28,00:50:32
+2024-03-27_13-19-15_remote-1spatial maze.txt,id1=29,id2=28,00:50:32
+2024-03-27_13-34-58_player-2spatial maze.txt,id1=19,id2=11,04:32:25,FAILURE
+2024-03-27_13-34-58_remote-1spatial maze.txt,id1=19,id2=11,04:32:25,FAILURE
+2024-03-27_14-03-30_player-2haptics maze.txt,id1=19,id2=11,00:53:23
+2024-03-27_14-03-30_remote-1haptics maze.txt,id1=19,id2=11,00:53:23
+2024-03-27_14-37-03_player-2spatial maze.txt,id1=15,id2=4,01:48:12
+2024-03-27_14-37-03_remote-1spatial maze.txt,id1=15,id2=4,01:48:12
+2024-03-27_14-49-24_player-2haptics maze.txt,id1=15,id2=4,03:17:27
+2024-03-27_14-49-24_remote-1haptics maze.txt,id1=15,id2=4,03:17:27
+2024-03-27_16-35-53_player-2spatial maze.txt,id1=14,id2=13,07:51:55
+2024-03-27_16-35-53_remote-1spatial maze.txt,id1=14,id2=13,07:51:55
+2024-03-27_16-58-00_player-2haptics maze.txt,id1=14,id2=13,00:58:98
+2024-03-27_16-58-00_remote-1haptics maze.txt,id1=14,id2=13,00:58:98
+2024-03-27_17-12-24_player-2spatial maze.txt,id1=10,id2=22,01:29:38
+2024-03-27_17-12-24_remote-1spatial maze.txt,id1=10,id2=22,01:29:38
+2024-03-27_17-23-08_player-2haptics maze.txt,id1=10,id2=22,08:46:55
+2024-03-27_17-23-08_remote-1haptics maze.txt,id1=10,id2=22,08:46:55
+

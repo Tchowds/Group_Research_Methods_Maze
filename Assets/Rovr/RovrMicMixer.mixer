@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-8889899034986104166
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c19392490ea519a48b02355c6a1254e8
+  m_EffectName: OculusSpatializerReflection
+  m_MixLevel: b76de11b0e8cab94caabd6ff1a24d94f
+  m_Parameters:
+  - m_ParameterName: GScale
+    m_GUID: c475c8c31f22d3d47bf41850b104909a
+  - m_ParameterName: E.Rflt On
+    m_GUID: cb6de2b7352c19a46bd1388d3499e6ed
+  - m_ParameterName: E.Rflt Rev On
+    m_GUID: 82e66daae7effff4fa0f338a005debdd
+  - m_ParameterName: Room X
+    m_GUID: 4408c3d0a3e03de41ba27d6a3a45150f
+  - m_ParameterName: Room Y
+    m_GUID: d474a7f6abf547349a41be87c939e767
+  - m_ParameterName: Room Z
+    m_GUID: 20d9400638e114d41b94163073dfdad0
+  - m_ParameterName: Left
+    m_GUID: fe2780606c459aa44a72a807634602c9
+  - m_ParameterName: Right
+    m_GUID: ac4326c35ac662743880e196ab943976
+  - m_ParameterName: Up
+    m_GUID: fdbfeb6e172297b4aa9f035726bda418
+  - m_ParameterName: Down
+    m_GUID: 781008936754ba14db9774abb40b754a
+  - m_ParameterName: Behind
+    m_GUID: 3eb85ccd34a4527418b6f5c5a151bc19
+  - m_ParameterName: Front
+    m_GUID: 4dc123527f5675c45b6ef3bc91f3a697
+  - m_ParameterName: Shared Rev Min
+    m_GUID: 27b64b380839e6e4b9005c53e232dc4a
+  - m_ParameterName: Shared Rev Max
+    m_GUID: e770a1d6ccbd37343b1c895c7daa95d2
+  - m_ParameterName: Shared Rev Wet
+    m_GUID: 6c592656a160f30448197518902728f4
+  - m_ParameterName: Prop Quality
+    m_GUID: 92f8c104d07726948a4b561c638d6f4d
+  - m_ParameterName: Voice Limit
+    m_GUID: 98f52e9d988fb59478b57d563c7366b6
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -83,6 +131,7 @@ AudioMixerGroupController:
   m_Pitch: 4afa1af57e36d4c45ac49f7daa6cdae9
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: -8889899034986104166}
   - {fileID: 244215410805253106}
   m_UserColorIndex: 0
   m_Mute: 0
