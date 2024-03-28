@@ -1,4 +1,4 @@
-import makeDir
+import makeDic
 import matplotlib.pyplot as plt
 
 # Plot box plot containing spatial and haptics times
@@ -41,7 +41,7 @@ def return_mean_and_std(spatial_times, haptics_times):
     return spatial_mean, spatial_std, haptics_mean, haptics_std
 
 filename = "dictionary.txt"
-spatial_times, haptics_times = makeDir.separate_times_by_filename_type(filename)
+spatial_times, haptics_times = makeDic.separate_times_by_filename_type(filename)
 plot_box_plot(spatial_times, haptics_times)
 
 spatial_mean, spatial_std, haptics_mean, haptics_std = return_mean_and_std(spatial_times, haptics_times)

@@ -1,5 +1,5 @@
 import os
-import makeDir
+import makeDic
 import matplotlib.pyplot as plt
 
 
@@ -87,7 +87,7 @@ def draw_heatmap(x_coords, y_coords, xlabel='X', ylabel='Y', title='Heatmap', gr
     plt.show()
 
 file_path = 'dictionary.txt'  # Replace with the path to your dictionary file
-id_filenames_dict = makeDir.read_dictionary_file(file_path)
+id_filenames_dict = makeDic.read_dictionary_file(file_path)
 
 x_coords_player_2, y_coords_player_2, x_coords_remote_1, y_coords_remote_1, x_coords_haptics, y_coords_haptics, x_coords_spatial, y_coords_spatial = read_coordinates_from_files_separate(id_filenames_dict)
 plot_heatmap(x_coords_player_2, y_coords_player_2, "player 2")

@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import makeDic
 
 #Plots one trajectory of a pair of players, define filename in the bottom (first field of header in each file)
 
@@ -52,12 +54,6 @@ def plot_coordinates_with_arrows_and_lines(file_paths):
         rotations = all_rotations[i]
         for j in range(len(x_coords) - 1):
             plt.scatter(x_coords[j], y_coords[j], color=colors[i][j])
-            # Calculate the direction vector based on rotation angle (in radians)
-            angle_rad = np.radians(rotations[j])  # No need to adjust angle
-            dx = np.sin(angle_rad)  # Switch sin and cos for clockwise rotation
-            dy = np.cos(angle_rad)
-            # Plot arrow starting from the point
-            # plt.arrow(x_coords[j], y_coords[j], dx, dy, head_width=0.5, head_length=0.7, fc="red", ec="red")
             # Plot line connecting current point to the next point
             plt.plot([x_coords[j], x_coords[j+1]], [y_coords[j], y_coords[j+1]], color=colors[i][j])
 
@@ -77,6 +73,46 @@ def plot_coordinates_with_arrows_and_lines(file_paths):
 
 
 # Example usage
-file_path = 'TraverseData/2024-03-27_11-46-28_player-2spatial maze.txt'  # Replace with the path to your text file
-remote_path = 'TraverseData/2024-03-27_11-46-28_remote-1spatial maze.txt'
+file_path = '2024-03-27_11-49-54_player-2spatial maze.txt'
+remote_path = '2024-03-27_11-49-54_remote-1spatial maze.txt'
+
+
+file_path = 'dictionary.txt'  # Replace with the path to your dictionary file
+id_filenames_dict = makeDic.read_dictionary_file(file_path)
+makeDic.print_array_sizes(id_filenames_dict)
+
+while True:
+    try:
+        idNum = input("Enter the ID number of the player you want to plot: ")
+        #dict keys: tuple of (id1, id2)
+        for key in id_filenames_dict.keys():
+            if idNum in key:
+                print(key)
+                file_paths = id_filenames_dict[key]
+                break
+        
+        mode = int(input("Enter 1 for spatial, 2 for haptics: "))
+        if mode == 1:
+            for i in range(len(file_paths)):
+                if "spatial" in file_paths[i]:
+                    if "player" in file_paths[i]:
+                        file_path = file_paths[i]
+                    elif "remote" in file_paths[i]:
+                        remote_path = file_paths[i]
+        elif mode == 2:
+            for i in range(len(file_paths)):
+                if "haptics" in file_paths[i]:
+                    if "player" in file_paths[i]:
+                        file_path = file_paths[i]
+                    elif "remote" in file_paths[i]:
+                        remote_path = file_paths[i]
+        else:
+            print("Invalid input.")
+            continue
+        break
+    except:
+        print("Invalid input.")
+
+file_path = os.path.join("TraverseData", file_path)
+remote_path = os.path.join("TraverseData", remote_path)
 plot_coordinates_with_arrows_and_lines([file_path, remote_path])
