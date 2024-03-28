@@ -1,10 +1,7 @@
 import makeDir
 import matplotlib.pyplot as plt
 
-
-
-
-
+#Get average speed from each run of experiment and compare players (whizzdishes)
 
 
 

@@ -1,5 +1,18 @@
 import os
 
+'''
+FILE PURPOSE
+
+Functionalities:
+- This reads all data from the traverseData folder
+- Adds all headers to one dictionary.txt file
+- Adds all filenames to a dictionary, key = (id1, id2), value = [filename1, filename2, ...] USEFUL FOR ALL OTHER FILES
+- Gets all the times taken from the files and separates them into spatial and haptics times
+
+
+Example usage at the bottom of the file
+'''
+
 def extract_first_lines(directory_path, output_file_path):
     with open(output_file_path, 'w') as output_file:
         for filename in os.listdir(directory_path):

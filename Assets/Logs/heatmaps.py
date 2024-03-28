@@ -2,6 +2,10 @@ import os
 import makeDir
 import matplotlib.pyplot as plt
 
+
+# Heatmap plotters for traversal for different players (different spawn points) and different modes (haptics vs spatial)
+
+
 #dict format is {('id1', 'id2'): ['filename1', 'filename2', ...], ...}
 #format of each file header is filename, id1=value1, id2=value2, time
 #format of every other line is timestamp, x, y, rot, numWalls

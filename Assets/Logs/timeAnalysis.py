@@ -1,6 +1,9 @@
 import makeDir
 import matplotlib.pyplot as plt
 
+# Plot box plot containing spatial and haptics times
+
+
 def plot_box_plot(spatial_times, haptics_times):
 
 

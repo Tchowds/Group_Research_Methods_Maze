@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+#Plots one trajectory of a pair of players, define filename in the bottom (first field of header in each file)
+
 def plot_coordinates_with_arrows_and_lines(file_paths):
     # Lists to store x, y coordinates, and rotations for each file
     all_x_coords = []
