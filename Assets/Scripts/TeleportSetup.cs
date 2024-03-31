@@ -20,10 +20,10 @@ public class TeleportSetup : MonoBehaviour
 
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
-            new Vector3(-48f, 0f, 50f), //left side of map (x)
+            new Vector3(-48f, 0f, 50f), //left side of map (x) PLAYER 1 ("REMOTE" IN FILENAME)
             new Vector3(-48f, 0f, 0f),
             new Vector3(-48f, 0f, -45f), 
-            new Vector3(46f, 0f, 49.5f), //right side of map 
+            new Vector3(46f, 0f, 49.5f), //right side of map PLAYER 2 ("PLAYER" IN FILENAME)
             new Vector3(46f, 0f, 0f),
             new Vector3(46f, 0f, -47.5f),
         };
