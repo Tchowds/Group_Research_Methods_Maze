@@ -1,5 +1,5 @@
-2024-03-26_11-38-09_player-2spatial maze.txt,id=23,id=7,04:20:29
-2024-03-26_11-38-09_remote-1spatial maze.txt,id=23,id=7,04:20:29
+2024-03-26_11-38-09_player-2spatial maze.txt,id1=23,id2=7,04:20:29
+2024-03-26_11-38-09_remote-1spatial maze.txt,id1=23,id2=7,04:20:29
 2024-03-26_12-01-19_player-1haptics maze.txt,id1=7,id2=23,03:17:56
 2024-03-26_12-01-19_remote-2haptics maze.txt,id1=7,id2=23,03:17:56
 2024-03-26_12-35-13_player-1haptics maze.txt,id1=25,id2=24,04:28:41
@@ -52,4 +52,3 @@
 2024-03-27_17-12-24_remote-1spatial maze.txt,id1=10,id2=22,01:29:38
 2024-03-27_17-23-08_player-2haptics maze.txt,id1=10,id2=22,08:46:55
 2024-03-27_17-23-08_remote-1haptics maze.txt,id1=10,id2=22,08:46:55
-

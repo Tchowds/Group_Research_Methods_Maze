@@ -1,4 +1,5 @@
 import os
+import numpy as np
 
 '''
 FILE PURPOSE
@@ -109,6 +110,56 @@ def separate_times_by_filename_type(file_path, include_failures = False):
     haptics_times = list(haptics_times_set)
 
     return spatial_times, haptics_times
+
+def get_velocities_by_filename_type(file_path, include_failures = False):
+    spatial_velocities = []
+    haptics_velocities = []
+
+    # Read the file
+    with open(file_path, 'r') as file:
+        for line in file:
+            # Split each line by comma
+            parts = line.strip().split(',')
+
+            # Check if the line has at least four parts
+            if len(parts) == 4 or (include_failures and len(parts) == 5):
+                parts = parts[0:4]
+                # Extract filename and time
+                filename = parts[0]
+
+                # read each file in 'TraverseData' folder
+                # from second line onwards second and third elements are x and y coordinates
+                # calculate velocity as distance between two points divided by time difference
+                # time difference = 1
+                # append velocities to spatial_velocities or haptics_velocities
+
+                # Extract x and y coordinates
+                filename = os.path.join('TraverseData', filename)
+                with open(filename, 'r') as file:
+                    next(file)
+                    velocities = []
+                    prev_x = None
+                    prev_y = None
+                    for line in file:
+                        parts = line.strip().split(',')
+                        if len(parts) >= 4:
+                            x = float(parts[1])
+                            y = float(parts[2])
+                            if prev_x is not None and prev_y is not None:
+                                distance = ((x - prev_x) ** 2 + (y - prev_y) ** 2) ** 0.5
+                                velocity = distance
+                                velocities.append(velocity)
+                            prev_x = x
+                            prev_y = y
+                    if 'spatial' in filename:
+                        spatial_velocities.append(np.mean(velocities))
+                    elif 'haptics' in filename:
+                        haptics_velocities.append(np.mean(velocities))
+        
+    return spatial_velocities, haptics_velocities
+
+
+
 
 
 

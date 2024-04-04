@@ -5,7 +5,7 @@ import numpy as np
 # Plot box plot containing spatial and haptics times
 
 
-def plot_box_plot(spatial_times, haptics_times, font_size=24, line_width=4):
+def plot_box_plot(spatial_times, haptics_times, font_size=24, line_width=4, xlabel = 'Time (s)', ylabel = 'Type of Time', title = 'Box Plot of Spatial and Haptics Times'):
 
     # Create a figure for the box plot
     fig, ax = plt.subplots()
@@ -21,10 +21,10 @@ def plot_box_plot(spatial_times, haptics_times, font_size=24, line_width=4):
     ax.set_yticklabels(['Spatial', 'Haptics'])
 
     # Set the x-axis label
-    ax.set_xlabel('Time (s)', fontsize=font_size)
+    ax.set_xlabel(xlabel, fontsize=font_size)
 
     # Set the title of the box plot
-    ax.set_title('Box Plot of Spatial and Haptics Times', fontsize=font_size)
+    ax.set_title(title, fontsize=font_size)
 
     # plt.subplots_adjust(top=0.8, bottom=0.2)
     plt.xticks(fontsize=font_size)
@@ -137,4 +137,7 @@ haptics_iqr = calculate_iqr(haptics_times)
 print("Spatial IQR:", spatial_iqr)
 print("Haptics IQR:", haptics_iqr)
 
-plot_box_plot(spatial_times_filtered, haptics_times_filtered)
+# plot_box_plot(spatial_times_filtered, haptics_times_filtered)
+spatial_velocities, haptics_velocities = makeDic.get_velocities_by_filename_type(filename, include_failures=True)
+print(spatial_velocities, haptics_velocities)
+plot_box_plot(spatial_velocities, haptics_velocities, xlabel='Velocity (m/s)', ylabel='Type of Velocity', title='Box Plot of Spatial and Haptics Velocities')

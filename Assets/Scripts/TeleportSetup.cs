@@ -15,9 +15,6 @@ public class TeleportSetup : MonoBehaviour
 
     void Start()
     {
-        // Transform social = transform.Find("Social");
-        // Transform interaction = transform.Find("XR Interaction Setup");
-
         //Init random positions to be placed;
         playerPositions = new Vector3[]{
             new Vector3(-48f, 0f, 50f), //left side of map (x) PLAYER 1 ("REMOTE" IN FILENAME)
@@ -36,25 +33,18 @@ public class TeleportSetup : MonoBehaviour
 
         // Index into the randomized position, first three for player 1 second three for player 2
         // if override > 0, manually set position, for testing
+        // player is locomotion (camera) object
         if(overrideSpawn != 0){
-            // social.position = playerPositions[overrideSpawn - 1];
-            // interaction.position = playerPositions[overrideSpawn - 1];
             player.position = playerPositions[overrideSpawn - 1];
         } else{
-            // social.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
-            // interaction.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
             player.position = playerPositions[((playerNum - 1) * 3) + spawnPos];
         }
         Debug.Log(player.position);
 
 
         if(playerNum == 1){
-            // social.rotation = Quaternion.Euler(0f, 90f, 0f);
-            // interaction.rotation = Quaternion.Euler(0f, 90f, 0f);
             player.rotation = Quaternion.Euler(0f, 90f, 0f);
         } else{
-            // social.rotation = Quaternion.Euler(0f, -90f, 0f);
-            // interaction.rotation = Quaternion.Euler(0f, -90f, 0f);
             player.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
     }

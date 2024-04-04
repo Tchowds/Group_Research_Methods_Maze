@@ -61,7 +61,7 @@ def plot_coordinates_with_arrows_and_lines(file_paths):
         print(len(x_coords) , "," , len(y_coords) , "," , len(colors[i]))
         plt.scatter(x_coords[-1], y_coords[-1], color=colors[i][-1])
 
-    plt.title('Plot of Coordinates with Direction Arrows and Connecting Lines')
+    plt.title('Plot of trajectory of two users')
     plt.xlabel('X-coordinate')
     plt.ylabel('Y-coordinate')
     plt.xticks(range(-50,51,10))
