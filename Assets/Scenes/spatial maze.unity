@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
-  m_IndirectSpecularColor: {r: 0.17593595, g: 0.22016978, b: 0.30249792, a: 1}
-=======
   m_IndirectSpecularColor: {r: 0.17593582, g: 0.22016938, b: 0.30249745, a: 1}
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7440,29 +7436,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &751696649 stripped
 Transform:
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751185560}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 492471157}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &751185562
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-=======
   m_CorrespondingSourceObject: {fileID: 2642065778884258268, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
   m_PrefabInstance: {fileID: 2642065777373534794}
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &751696654
 MonoBehaviour:
@@ -8309,11 +8284,7 @@ Transform:
   m_GameObject: {fileID: 809665293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-=======
   m_LocalPosition: {x: 0, y: 20, z: 0}
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24146,17 +24117,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
-    - target: {fileID: 2642065778133092619, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2642065778133092619, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-=======
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity
     - target: {fileID: 2642065778415834132, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -24408,136 +24368,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 217390600}
   m_SourcePrefab: {fileID: 100100000, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
---- !u!114 &2642065777373534796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1731467569171809127, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-  m_PrefabInstance: {fileID: 2642065777373534794}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795565464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78043eb8bdd2f6b44a1cfd44c3b8fa5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2642065777373534797 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2642065778884258265, guid: 46c1f5d5a11cf5042886aabd56e7b9d7, type: 3}
-  m_PrefabInstance: {fileID: 2642065777373534794}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2642065777373534798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2642065777373534797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050bde74fe2421d4f84f7e1201b4ae17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatarManager: {fileID: 2642065777373534796}
-  playerNum: 1
-  overrideSpawn: 0
---- !u!1001 &8245267066359241567
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 261526883}
-    m_Modifications:
-    - target: {fileID: 752346356719645401, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4819973546623887357, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560436418350968481, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120064, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_Name
-      value: Firework Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.456
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.543
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.688
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8245267067570120125, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 670224309865224971, guid: be3083a5f26d4e859d594ecbe632f87e, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
---- !u!4 &8245267066359241568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8245267067570120123, guid: 76e53f38a7ad1c44bb05311d46bf216d, type: 3}
-  m_PrefabInstance: {fileID: 8245267066359241567}
-  m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< HEAD:Assets/Scenes/spatial2.unity
-  - {fileID: 1995168927}
-  - {fileID: 2642065777373534794}
-  - {fileID: 261526883}
-  - {fileID: 809665294}
-  - {fileID: 902102953}
-  - {fileID: 2065098753}
-=======
   - {fileID: 809665294}
   - {fileID: 2642065777373534794}
   - {fileID: 558293719}
   - {fileID: 906072665}
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/spatial maze.unity

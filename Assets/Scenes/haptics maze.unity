@@ -24782,8 +24782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNum: 0
   overrideSpawn: 0
-=======
->>>>>>> 7a40561baaa59f633a34899b4ef68b4bc6312545:Assets/Scenes/haptics maze.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
