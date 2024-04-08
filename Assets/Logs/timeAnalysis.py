@@ -1,6 +1,7 @@
 import makeDic
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.stats as stats
 
 # Plot box plot containing spatial and haptics times
 
@@ -110,6 +111,9 @@ def calculate_iqr(data):
     q1, q3 = np.percentile(data, [25, 75])
     return q3 - q1
 
+def t_test(spatial_data, haptics_data):
+    return stats.ttest_ind(spatial_data, haptics_data)
+
 filename = "dictionary.txt"
 spatial_times, haptics_times = makeDic.separate_times_by_filename_type(filename)
 print(spatial_times, haptics_times)
@@ -141,3 +145,9 @@ print("Haptics IQR:", haptics_iqr)
 spatial_velocities, haptics_velocities = makeDic.get_velocities_by_filename_type(filename, include_failures=True)
 print(spatial_velocities, haptics_velocities)
 plot_box_plot(spatial_velocities, haptics_velocities, xlabel='Velocity (m/s)', ylabel='Type of Velocity', title='Box Plot of Spatial and Haptics Velocities')
+
+t_statistic, p_value = t_test(spatial_times, haptics_times)
+print("T-Statistic:", t_statistic)
+print("P-Value:", p_value)
+
+
